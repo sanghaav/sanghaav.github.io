@@ -1,0 +1,60 @@
+---
+title: "Data Analysis: Automated Data Pipeline"
+description: "Scraping, cleaning, and visualizing data."
+---
+
+## The Problem
+
+We needed a reliable way to track the list of largest companies in the US by revenue, but the data was on another 3rd party website.
+
+## Web Scraping & Cleaning
+
+I built an automated pipeline using Python, BeautifulSoup, and Pandas to extract and structure the data.
+
+```{python}
+import pandas as pd
+from bs4 import BeautifulSoup
+import requests
+
+url = 'https://en.wikipedia.org/wiki/List_of_largest_companies_in_the_United_States_by_revenue'
+
+page = requests.get(url, headers = {'User-Agent': 'CustomBot (xyz@gmail.com)'})
+
+soup = BeautifulSoup(page.text, 'html')
+
+## print(soup)
+
+soup.find_all('table')[0]
+
+soup.find('table', class_ = 'wikitable sortable')
+
+table = soup.find_all('table')[0]
+
+## print(table)
+
+company_titles = table.find_all('th')
+
+company_titles
+
+company_table_titles = [title.text.strip() for title in company_titles]
+
+## print(company_table_titles)
+
+df = pd.DataFrame(columns = company_table_titles)
+
+df
+
+column_data = table.find_all('tr')
+
+for row in column_data[1:]:
+    row_data = row.find_all('td')
+    individual_row_data = [data.text.strip() for data in row_data]
+
+    length = len(df)
+    df.loc[length] = individual_row_data
+
+df
+
+## df.to_csv(r'/Users/nav/WebScraping for Output\Companies.csv', index = False)
+
+```

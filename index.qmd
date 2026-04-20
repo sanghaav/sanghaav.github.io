@@ -1,0 +1,33 @@
+---
+title: "Nav Sangha"
+image: profile2.jpeg # Put a professional headshot in your project folder
+about:
+  template: trestles # This creates a clean, side-by-side layout
+  image-shape: rounded
+  links:
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/avneetsangha/
+      target: _blank
+    - icon: github
+      text: GitHub
+      href: https://github.com/sanghaav
+      target: _blank
+    - icon: envelope
+      text: Email
+      href: mailto:nvsangha@gmail.com
+---
+
+### Hi, I'm Nav Sangha.
+**I turn raw data into automated solutions and actionable business insights.**
+
+I am a Data Professional specializing in building robust data pipelines, exploratory analysis, and interactive reporting. I bridge the gap between complex technical architecture and strategic business operations.
+
+**My Core Stack:** Python, Pandas, SQL, BeautifulSoup, and Quarto.
+
+---
+
+### Featured Project: Data Analysis: Automated Data Pipeline
+*I built an automated pipeline using Python, BeautifulSoup, and Pandas to extract and structure the data from a 3rd party website.*
+
+[👉 **Read the full case study here**](WebScraper.qmd)

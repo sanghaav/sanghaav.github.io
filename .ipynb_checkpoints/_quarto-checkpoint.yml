@@ -1,0 +1,19 @@
+project:
+  type: website
+
+website:
+  title: "Nav Sangha | Data & Solutions"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: WebScraper.qmd
+        text: Case Studies
+      - href: resume.pdf
+        text: Resume
+
+format:
+  html:
+    theme: lux # A clean, modern, professional theme
+    css: styles.css
+    toc: true # Adds a table of contents to your long-form case studies
