@@ -14,6 +14,6 @@ website:
 
 format:
   html:
-    theme: lux # A clean, modern, professional theme
+    theme: lux
     css: styles.css
-    toc: true # Adds a table of contents to your long-form case studies
+    toc: true # Adds a table of contents
