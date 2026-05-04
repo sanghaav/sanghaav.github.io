@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Nav Sangha – Nav Sangha | Data Analyst</title>
+<title>sqldataexploration – Nav Sangha | Data Analyst</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -37,6 +37,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -92,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -104,7 +105,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">SQL - Data Cleaning</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./SQLDataExploration.html"> 
+    <a class="nav-link active" href="./SQLDataExploration.html" aria-current="page"> 
 <span class="menu-text">SQL - Data Exploration</span></a>
   </li>  
   <li class="nav-item">
@@ -122,63 +123,96 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-  <ul>
-  <li><a href="#hi-im-nav-sangha." id="toc-hi-im-nav-sangha." class="nav-link active" data-scroll-target="#hi-im-nav-sangha.">Hi, I’m Nav Sangha.</a></li>
-  <li><a href="#featured-project-data-analysis-automated-data-pipeline" id="toc-featured-project-data-analysis-automated-data-pipeline" class="nav-link" data-scroll-target="#featured-project-data-analysis-automated-data-pipeline">Featured Project: Data Analysis: Automated Data Pipeline</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
-<div class="quarto-about-trestles">
-  <div class="about-entity">
-    <img src="profile2.jpeg" class="about-image
-  rounded " style="width: 20em;">
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Nav Sangha</h1>
-</div>
-<div class="quarto-title-meta">
-  </div>
-</header>
-    <div class="about-links">
-  <a href="https://www.linkedin.com/in/avneetsangha/" class="about-link" rel="" target="_blank">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">LinkedIn</span>
-  </a>
-  <a href="https://github.com/sanghaav" class="about-link" rel="" target="_blank">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">GitHub</span>
-  </a>
-  <a href="mailto:nvsangha@gmail.com" class="about-link" rel="" target="">
-    <i class="bi bi-envelope"></i>
-     <span class="about-link-text">Email</span>
-  </a>
-</div>
-  </div>
-  <div class="about-contents"><main class="content" id="quarto-document-content">
-
-<section id="hi-im-nav-sangha." class="level3">
-<h3 data-anchor-id="hi-im-nav-sangha.">Hi, I’m Nav Sangha.</h3>
-<p><strong>I turn raw data into automated solutions and actionable business insights.</strong></p>
-<p>I am a Data Professional specializing in building robust data pipelines, exploratory analysis, and interactive reporting. I bridge the gap between complex technical architecture and strategic business operations.</p>
-<p><strong>My Core Stack:</strong> Python, Pandas, SQL, Microsoft Office, Power BI and Tableau.</p>
-<hr>
-</section>
-<section id="featured-project-data-analysis-automated-data-pipeline" class="level3">
-<h3 data-anchor-id="featured-project-data-analysis-automated-data-pipeline">Featured Project: Data Analysis: Automated Data Pipeline</h3>
-<p><em>I built an automated pipeline using Python, BeautifulSoup, and Pandas to extract and structure the data from a 3rd party website.</em></p>
-<p><a href="./WebScraper.html">👉 <strong>Read the full case study here</strong></a></p>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
-</section>
-</main></div>
-</div>
- <!-- /main -->
+
+
+<p>– SQL Project - Data Exploration</p>
+<p>– <a href="https://www.kaggle.com/datasets/swaptr/layoffs-2022" target="_blank">https://www.kaggle.com/datasets/swaptr/layoffs-2022</a></p>
+<pre><code>
+
+SELECT *
+FROM layoffs_staging2;
+
+SELECT company, SUM(total_laid_off)
+FROM layoffs_staging2
+GROUP BY company
+ORDER BY 2 DESC;
+
+SELECT MIN(`date`),MAX(`date`)
+FROM layoffs_staging2;
+
+SELECT industry, SUM(total_laid_off)
+FROM layoffs_staging2
+GROUP BY industry
+ORDER BY 2 DESC;
+
+SELECT YEAR(`date`), SUM(total_laid_off)
+FROM layoffs_staging2
+GROUP BY YEAR(`date`)
+ORDER BY 1 DESC;
+
+SELECT SUBSTRING(`date`,6,2) AS `MONTH`, SUM(total_laid_off)
+FROM layoffs_staging2
+GROUP BY `MONTH`;
+
+SELECT SUBSTRING(`date`,1,7) AS `MONTH`, SUM(total_laid_off)
+FROM layoffs_staging2
+WHERE SUBSTRING(`date`,1,7) IS NOT NULL
+GROUP BY `MONTH`
+ORDER BY `MONTH`;
+
+WITH ROLLING_TOTAL AS
+(
+SELECT SUBSTRING(`date`,1,7) AS `MONTH`, SUM(total_laid_off) AS total_off
+FROM layoffs_staging2
+WHERE SUBSTRING(`date`,1,7) IS NOT NULL
+GROUP BY `MONTH`
+ORDER BY `MONTH` ASC
+)
+SELECT `MONTH`, total_off, SUM(total_off) OVER(ORDER BY `MONTH`)
+FROM ROLLING_TOTAL;
+
+SELECT company, YEAR(`date`), SUM(total_laid_off)
+FROM layoffs_staging2
+GROUP BY company, YEAR(`date`)
+ORDER BY 3 DESC;
+
+WITH company_year(Company, Years, Total_Laid_Off) AS
+(
+SELECT company, YEAR(`date`), SUM(total_laid_off)
+FROM layoffs_staging2
+GROUP BY company, YEAR(`date`)
+),
+company_year_rank AS
+(
+SELECT *, DENSE_RANK() OVER(PARTITION BY years ORDER BY total_laid_off DESC) AS Ranking
+FROM company_year
+WHERE years IS NOT NULL
+)
+SELECT *
+FROM company_year_rank
+WHERE Ranking &lt;=5;
+
+</code></pre>
+
+
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     

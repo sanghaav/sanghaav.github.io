@@ -1,19 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://sanghaav.github.io/about.html</loc>
-    <lastmod>2026-04-21T00:00:34.462Z</lastmod>
+    <loc>https://sanghaav.github.io/SQLDataExploration.html</loc>
+    <lastmod>2026-05-04T16:51:40.860Z</lastmod>
   </url>
   <url>
-    <loc>https://sanghaav.github.io/index.html</loc>
-    <lastmod>2026-04-21T00:00:34.462Z</lastmod>
+    <loc>https://sanghaav.github.io/queen_west_forecast.html</loc>
+    <lastmod>2026-05-04T14:13:58.945Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sanghaav.github.io/WebScraper.html</loc>
+    <lastmod>2026-05-04T14:18:39.434Z</lastmod>
   </url>
   <url>
     <loc>https://sanghaav.github.io/Untitled.html</loc>
     <lastmod>2026-04-21T00:00:34.433Z</lastmod>
   </url>
   <url>
-    <loc>https://sanghaav.github.io/WebScraper.html</loc>
-    <lastmod>2026-04-21T17:48:46.443Z</lastmod>
+    <loc>https://sanghaav.github.io/index.html</loc>
+    <lastmod>2026-05-04T16:38:52.358Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sanghaav.github.io/about.html</loc>
+    <lastmod>2026-04-21T00:00:34.462Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sanghaav.github.io/SQLDataCleaning.html</loc>
+    <lastmod>2026-05-04T16:52:09.002Z</lastmod>
   </url>
 </urlset>
